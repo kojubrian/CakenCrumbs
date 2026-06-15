@@ -1,5 +1,3 @@
-use bakery_management;
-
 -- USERS TABLE
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
