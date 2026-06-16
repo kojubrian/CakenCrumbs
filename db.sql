@@ -22,11 +22,13 @@ CREATE TABLE products (
     name VARCHAR(150) NOT NULL,
     description TEXT,
     price DECIMAL(10,2) NOT NULL,
-    category VARCHAR(100),
-    is_active BOOLEAN DEFAULT TRUE,
-    requires_advance_notice BOOLEAN DEFAULT FALSE,
+    stock INT DEFAULT 0,
+    category_id INT,
+    image_url VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (category_id) REFERENCES categories(id)
 );
 
 -- ORDERS TABLE
